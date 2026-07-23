@@ -1,40 +1,944 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+```
+<title>Ahmed Sunil | Full-Stack Developer & IT Professional</title>
+
+<meta name="description"
+      content="Ahmed Sunil — Full-Stack Developer, Senior ICT Technician, and IT Educator specializing in Laravel, PHP, Livewire, FilamentPHP, Python, and education technology.">
+
+<style>
+    :root {
+        --bg: #0b0d10;
+        --bg-soft: #111419;
+        --card: #15191f;
+        --border: #252b33;
+        --text: #f5f7fa;
+        --muted: #9ca3af;
+        --accent: #ffffff;
+        --accent-soft: #d1d5db;
+        --max-width: 1150px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .container {
+        width: min(100% - 40px, var(--max-width));
+        margin: auto;
+    }
+
+    /* Navigation */
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 100;
+
+        background: rgba(11, 13, 16, 0.85);
+        backdrop-filter: blur(15px);
+
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-inner {
+        height: 70px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .logo span {
+        color: var(--muted);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+        color: var(--text);
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+
+        padding-top: 70px;
+    }
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+    .eyebrow {
+        display: inline-flex;
+
+        padding: 7px 14px;
+
+        border: 1px solid var(--border);
+        border-radius: 999px;
+
+        color: var(--muted);
+
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        font-size: clamp(48px, 8vw, 92px);
+        line-height: 1.05;
+        letter-spacing: -5px;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+        color: var(--muted);
+    }
+
+    .hero-description {
+        max-width: 700px;
+
+        color: var(--muted);
+
+        font-size: 19px;
+        line-height: 1.8;
+
+        margin-bottom: 35px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 12px 20px;
+
+        border-radius: 8px;
+
+        font-size: 14px;
+        font-weight: 600;
+
+        transition: 0.2s;
+    }
+
+    .btn-primary {
+        background: var(--accent);
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        background: var(--accent-soft);
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+        border: 1px solid var(--border);
+        color: var(--text);
+    }
+
+    .btn-secondary:hover {
+        background: var(--card);
+    }
+
+    /* Sections */
+
+    section {
+        padding: 110px 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+        color: var(--muted);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: clamp(32px, 5vw, 52px);
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+    }
+
+    .section-description {
+        max-width: 700px;
+        color: var(--muted);
+        font-size: 17px;
+    }
+
+    /* About */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 70px;
+
+        margin-top: 50px;
+    }
+
+    .about-text p {
+        color: var(--muted);
+        margin-bottom: 20px;
+    }
+
+    .experience {
+        border-left: 1px solid var(--border);
+        padding-left: 30px;
+    }
+
+    .experience-item {
+        margin-bottom: 35px;
+    }
+
+    .experience-item h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .experience-item .company {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .experience-item p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* Skills */
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-top: 40px;
+    }
+
+    .skill {
+        padding: 10px 16px;
+
+        border: 1px solid var(--border);
+        border-radius: 7px;
+
+        background: var(--bg-soft);
+
+        font-size: 14px;
+        color: var(--muted);
+
+        transition: 0.2s;
+    }
+
+    .skill:hover {
+        color: var(--text);
+        border-color: #555;
+        transform: translateY(-2px);
+    }
+
+    /* Projects */
+
+    .projects {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 18px;
+
+        margin-top: 50px;
+    }
+
+    .project {
+        background: var(--card);
+
+        border: 1px solid var(--border);
+
+        border-radius: 12px;
+
+        padding: 28px;
+
+        transition: 0.25s;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        border-color: #4b5563;
+    }
+
+    .project-number {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+    .project h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .project p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .project-link {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* Education */
+
+    .education {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 18px;
+
+        margin-top: 50px;
+    }
+
+    .education-card {
+        padding: 30px;
+
+        border: 1px solid var(--border);
+        border-radius: 12px;
+
+        background: var(--bg-soft);
+    }
+
+    .education-card h3 {
+        margin-bottom: 8px;
+    }
+
+    .education-card p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* Contact */
+
+    .contact {
+        text-align: center;
+    }
+
+    .contact-content {
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .contact h2 {
+        margin-bottom: 20px;
+    }
+
+    .contact p {
+        color: var(--muted);
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        display: flex;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        margin-top: 30px;
+    }
+
+    .social-links a {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .social-links a:hover {
+        color: var(--text);
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 35px 0;
+
+        border-top: 1px solid var(--border);
+
+        color: var(--muted);
+
+        font-size: 13px;
+
+        text-align: center;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+
+        .nav-links {
+            display: none;
+        }
+
+        h1 {
+            letter-spacing: -3px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .experience {
+            border-left: none;
+            border-top: 1px solid var(--border);
+
+            padding-left: 0;
+            padding-top: 40px;
+        }
+
+        .projects {
+            grid-template-columns: 1fr;
+        }
+
+        .education {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
 </head>
+
 <body>
-    <div class="text-center text-4xl text-rose-500 mt-6 ">
-        <h1>Still in Development</h1>
+
+<!-- Navigation -->
+
+<nav>
+    <div class="container nav-inner">
+
+```
+    <a href="#" class="logo">
+        Ahmed<span>Sunil</span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</div>
+```
+
+</nav>
+
+<!-- Hero -->
+
+<header class="hero">
+
+```
+<div class="container">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Full-Stack Developer · IT Professional · Educator
+        </div>
+
+        <h1>
+            Building useful software<br>
+            <span>that solves real problems.</span>
+        </h1>
+
+        <p class="hero-description">
+            I'm Ahmed Sunil, a full-stack developer and IT professional
+            with 10+ years of experience in software development,
+            technical support, systems, and ICT education.
+            I enjoy turning ideas into practical, reliable,
+            and maintainable software.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="https://github.com/ahmedsunil"
+                class="btn btn-primary">
+                View GitHub
+            </a>
+
+            <a
+                href="#projects"
+                class="btn btn-secondary">
+                Explore My Work
+            </a>
+
+        </div>
+
     </div>
-    <section>
-        <div>
-            <h1 class="text-center mt-6">Hygieia - Project for Health Center</h1>
-            <div class="grid grid-cols-5 gap-2 m-4">
-                <a href="/img/1.png"><img src="/img/1.png" alt=""></a>
-                <a href="/img/2.png"><img src="/img/2.png" alt=""></a>
-                <a href="/img/3.png"><img src="/img/3.png" alt=""></a>
-                <a href="/img/4.png"><img src="/img/4.png" alt=""></a>
-                <a href="/img/5.png"><img src="/img/5.png" alt=""></a>
-            </div>
+
+</div>
+```
+
+</header>
+
+<!-- About -->
+
+<section id="about">
+
+```
+<div class="container">
+
+    <div class="section-label">
+        01 — About
+    </div>
+
+    <h2>
+        Experience across technology,
+        software, and education.
+    </h2>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I am an IT professional with more than 10 years
+                of experience working across software development,
+                technical support, systems administration,
+                and ICT education.
+            </p>
+
+            <p>
+                I currently work as a Senior ICT Technician at
+                Hulhudhuffaaru School, where I contribute to
+                technology initiatives and develop software systems
+                that support education and school operations.
+            </p>
+
+            <p>
+                My professional background also includes working
+                as a Technical Support Engineer at Bank of Maldives
+                and as a Software Developer at the Local Government
+                Authority.
+            </p>
+
         </div>
-        <div>
-            <h1 class="text-center mt-6">Entry - Project for Hulhudhuffaaru School</h1>
-            <div class="grid grid-cols-5 gap-2 m-4">
-                <a href="/img/6.jpg"><img src="/img/6.jpg" alt=""></a>
+
+        <div class="experience">
+
+            <div class="experience-item">
+
+                <h3>
+                    Senior ICT Technician
+                </h3>
+
+                <div class="company">
+                    Hulhudhuffaaru School
+                </div>
+
+                <p>
+                    Technology, software systems,
+                    ICT infrastructure, and education technology.
+                </p>
+
             </div>
-        </div>
-        <div>
-            <h1 class="text-center mt-6">Loamafaanu - Project for Local Government Authority</h1>
-            <div class="grid grid-cols-5 gap-2 m-4">
-                <a href="/img/7.jpg"><img src="/img/7.jpg" alt=""></a>
-                <a href="/img/8.jpg"><img src="/img/8.jpg" alt=""></a>
-                <a href="/img/9.jpg"><img src="/img/9.jpg" alt=""></a>
+
+            <div class="experience-item">
+
+                <h3>
+                    Software Developer
+                </h3>
+
+                <div class="company">
+                    Local Government Authority
+                </div>
+
+                <p>
+                    Software development and digital solutions
+                    for organizational requirements.
+                </p>
+
             </div>
+
+            <div class="experience-item">
+
+                <h3>
+                    Technical Support Engineer
+                </h3>
+
+                <div class="company">
+                    Bank of Maldives
+                </div>
+
+                <p>
+                    Technical support, troubleshooting,
+                    and enterprise IT operations.
+                </p>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills">
+
+```
+<div class="container">
+
+    <div class="section-label">
+        02 — Skills
+    </div>
+
+    <h2>
+        Technologies I work with.
+    </h2>
+
+    <p class="section-description">
+        My current technology stack focuses on building modern,
+        maintainable, and practical web applications.
+    </p>
+
+    <div class="skills">
+
+        <div class="skill">PHP</div>
+        <div class="skill">Laravel</div>
+        <div class="skill">Livewire</div>
+        <div class="skill">FilamentPHP</div>
+        <div class="skill">Python</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Tailwind CSS</div>
+        <div class="skill">MySQL</div>
+        <div class="skill">PostgreSQL</div>
+        <div class="skill">REST APIs</div>
+        <div class="skill">Git</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Docker</div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+```
+<div class="container">
+
+    <div class="section-label">
+        03 — Projects
+    </div>
+
+    <h2>
+        Things I've built.
+    </h2>
+
+    <p class="section-description">
+        A selection of projects and systems that represent
+        my interests in software development, education,
+        automation, and technology.
+    </p>
+
+    <div class="projects">
+
+        <article class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <h3>
+                School Technology
+            </h3>
+
+            <p>
+                Education technology and school management
+                systems designed to improve administrative
+                workflows and student services.
+            </p>
+
+            <a
+                href="https://github.com/ahmedsunil"
+                class="project-link">
+                View projects →
+            </a>
+
+        </article>
+
+
+        <article class="project">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <h3>
+                HS Election
+            </h3>
+
+            <p>
+                A digital election system designed to support
+                student elections and simplify the voting process.
+            </p>
+
+            <a
+                href="https://github.com/ahmedsunil/hs-election"
+                class="project-link">
+                View repository →
+            </a>
+
+        </article>
+
+
+        <article class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <h3>
+                Zakat Al-Mal
+            </h3>
+
+            <p>
+                A project focused on making Zakat calculation
+                and related information more accessible through
+                technology.
+            </p>
+
+            <a
+                href="https://github.com/ahmedsunil/Zakat-Al-Mal"
+                class="project-link">
+                View repository →
+            </a>
+
+        </article>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- Education -->
+
+<section id="education">
+
+```
+<div class="container">
+
+    <div class="section-label">
+        04 — Education
+    </div>
+
+    <h2>
+        Learning and teaching.
+    </h2>
+
+    <p class="section-description">
+        I believe the best way to learn technology is to build
+        real things and share knowledge with others.
+    </p>
+
+    <div class="education">
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Information Technology
+            </h3>
+
+            <p>
+                Academic background in Information Technology,
+                software development, systems, and computing.
+            </p>
+
+        </div>
+
+        <div class="education-card">
+
+            <h3>
+                ICT Education
+            </h3>
+
+            <p>
+                Teaching programming, databases, and web development,
+                with a focus on practical, project-based learning.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+```
+<div class="container">
+
+    <div class="contact">
+
+        <div class="contact-content">
+
+            <div class="section-label">
+                05 — Contact
+            </div>
+
+            <h2>
+                Let's build something useful.
+            </h2>
+
+            <p>
+                Interested in software development,
+                education technology, or technology projects?
+                Feel free to connect with me.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://github.com/ahmedsunil"
+                    class="btn btn-primary">
+                    GitHub
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="https://github.com/ahmedsunil">
+                    GitHub
+                </a>
+
+                <!-- Add your LinkedIn here -->
+                <!--
+                <a href="YOUR_LINKEDIN_URL">
+                    LinkedIn
+                </a>
+                -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+```
+<div class="container">
+
+    © <span id="year"></span> Ahmed Sunil.
+    Built with HTML & CSS.
+
+</div>
+```
+
+</footer>
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
 </body>
 </html>
